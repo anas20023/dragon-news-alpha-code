@@ -1,21 +1,18 @@
 'use client'
 import { Button } from "@heroui/react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import logo from '@/assets/logo.png'
-import Image from "next/image";
+import { usePathname } from "next/navigation";  
 const Navbar = () => {
     const pathname=usePathname()
     return (
         <nav className="sticky top-0 z-40 w-full flex flex-row justify-center items-center">
             <header className="flex max-w-6xl mx-auto w-full  h-16 items-center justify-between px-6">
-               <Image src={logo} height={200} width={200} alt="Logo"/>
                 <ul className="flex items-center gap-4">
-                    <li><Link className={'no-underline'} href="#">Home</Link></li>
+                    <li><Link className={'no-underline'} href="/">Home</Link></li>
                     <li><Link className={'no-underline'} href="#">About</Link></li>
                     <li><Link className={'no-underline'} href="#">Career</Link></li>
                 </ul>
-                <Link href={pathname==='/register'?'/login':"/register"}><Button>{pathname==='/register'?'Login':"Register"}</Button></Link>
+                <Link href={pathname==='/register'?'/login':"/register"}><Button>{pathname==='/register'?'Login':pathname==='/login'?'Register':'Login'}</Button></Link>
             </header>
         </nav>
     )
