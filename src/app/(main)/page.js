@@ -5,9 +5,7 @@ import BreakingNews from "@/components/shared/BreakingNews";
 export default function Home() {
   return (
     <div>
-      <Header/>
-      <BreakingNews/>
-      <Navbar/>
+      Main Page Content will come here
     </div>
   );
 }

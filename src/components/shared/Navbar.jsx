@@ -1,19 +1,17 @@
-'use client'
 import { Button } from "@heroui/react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";  
+import Link from "next/link";  
+import NavLink from "./NavLink";
 const Navbar = () => {
-    const pathname=usePathname()
     return (
         <nav className="sticky top-0 z-40 w-full flex flex-row justify-center items-center">
             <header className="flex max-w-6xl mx-auto w-full  h-16 items-center justify-between px-6">
                 <div></div>
                 <ul className="flex items-center gap-4">
-                    <li><Link className={'no-underline'} href="/">Home</Link></li>
-                    <li><Link className={'no-underline'} href="#">About</Link></li>
-                    <li><Link className={'no-underline'} href="#">Career</Link></li>
+                    <li><NavLink className={'no-underline'} href="/">Home</NavLink></li>
+                    <li><NavLink className={'no-underline'} href="/about">About</NavLink></li>
+                    <li><NavLink className={'no-underline'} href="/career">Career</NavLink></li>
                 </ul>
-                <Link href={pathname==='/register'?'/login':"/register"}><Button>{pathname==='/register'?'Login':pathname==='/login'?'Register':'Login'}</Button></Link>
+                <Link href={'/login'}><Button>Login</Button></Link>
             </header>
         </nav>
     )
