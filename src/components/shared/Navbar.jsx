@@ -7,6 +7,7 @@ const Navbar = () => {
     return (
         <nav className="sticky top-0 z-40 w-full flex flex-row justify-center items-center">
             <header className="flex max-w-6xl mx-auto w-full  h-16 items-center justify-between px-6">
+                <div></div>
                 <ul className="flex items-center gap-4">
                     <li><Link className={'no-underline'} href="/">Home</Link></li>
                     <li><Link className={'no-underline'} href="#">About</Link></li>
