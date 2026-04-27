@@ -1,10 +1,6 @@
 import NewsCard from "@/components/home/NewsCard"
+import { getNewsByCategory } from "@/lib/data"
 
-const getNewsByCategory= async(category_id)=>{
-    const res=await fetch(`https://openapi.programming-hero.com/api/news/category/${category_id}`)
-    const data=res.json()
-    return data
-}
 const News = async({category='08'}) => {
     const res = await getNewsByCategory(category)
     const CategoryNews = res.data
