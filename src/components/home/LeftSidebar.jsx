@@ -4,7 +4,7 @@ import Link from "next/link"
 const Catagory = async ({ activeID=null }) => {
     const res = await getCatagories()
     const catagories = res.data.news_category.sort((a,b)=>a.category_name.localeCompare(b.category_name))
-    console.log(catagories)
+   // console.log(catagories)
     return (
         <div className="p-2">
             <p className="text-xl font-semibold my-2">All Caterogy</p>

@@ -1,7 +1,10 @@
+import { Button } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaStar, FaRegBookmark, FaShareAlt, FaEye } from "react-icons/fa";
 
 const NewsCard = ({ news }) => {
+ // console.log(news)
   const { title, author, image_url, details, rating, total_view } = news;
 
   const formattedDate = new Date(author.published_date).toLocaleDateString(
@@ -64,9 +67,10 @@ const NewsCard = ({ news }) => {
           {details.length > 200 ? `${details.slice(0, 200)}...` : details}
         </p>
 
-        <button className="mt-2 text-orange-500 font-semibold hover:underline">
-          Read More
-        </button>
+        <Link href={`/news/${news._id}`} className="no-underline">
+          <Button variant="danger-soft" className="mt-2">
+            Read More
+          </Button></Link>
       </div>
 
       {/* Footer */}
